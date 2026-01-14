@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo/incomeExpense.git'
+                git branch: 'main', url: 'https://github.com/Madhusudhanhub/incomeExpense.git'
             }
         }
 
