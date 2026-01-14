@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: income-expense-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: income-expense
+  template:
+    metadata:
+      labels:
+        app: income-expense
+    spec:
+      containers:
+      - name: income-expense
+        image: 173471018017.dkr.ecr.us-east-1.amazonaws.com/income-expense:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: income-expense-db-secret
+              key: DB_HOST
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: income-expense-db-secret
+              key: DB_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: income-expense-db-secret
+              key: DB_PASSWORD
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: income-expense-db-secret
+              key: DB_NAME
+

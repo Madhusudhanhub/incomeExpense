@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./base.css">
-
+    <!-- ✅ Removed './' so nginx can serve correctly -->
+    <link rel="stylesheet" href="base.css">
 </head>
 
 <body>
@@ -20,8 +20,8 @@
             <p class="amt-text">Amount Available</p>
             <p class="amt">0</p>
         </div>
-      
     </div>
+
     <div class="input-form">
         <form>
             <label for="transaction-type">Transaction Type:</label>
@@ -38,10 +38,10 @@
             <button class="button-add">Add</button>
         </form>
     </div>
+
     <div class="expense-sheet">
         <div class="income-section">
             <h3>Income</h3>
-
             <div class="income-list">
                 <div class="list">
                     <h4 class="inc-type">Income</h4>
@@ -53,12 +53,10 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
+
         <div class="expense-section">
             <h3>Expense</h3>
-
             <div class="expense-list">
                 <div class="list">
                     <h4 class="exp-type">Expense</h4>
@@ -70,10 +68,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <script src="./app.js"></script>
-</body>
 
+    <!-- ✅ Removed './' so nginx can serve correctly -->
+    <script src="app.js"></script>
+</body>
 </html>
+
